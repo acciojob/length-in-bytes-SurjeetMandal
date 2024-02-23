@@ -1,12 +1,14 @@
 const byteSize = (str) => {
   // write your code here
-	let count = 0;
-	for (let i = 0; i < str.length; i++) {
-		count ++;
-	}
-	return count;
+	if(str.trim()==0) return 0;
+	const encoder = new TextEncoder();
+	const encodedData = encoder.encode(str);
+	const byteLength = encodedData.length;
+	return byteLength;
 };
+
+
+// Do not change the code below
 const str = prompt("Enter some string.");
 alert(byteSize(str));
-// Do not change the code below
 
